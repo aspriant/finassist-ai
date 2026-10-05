@@ -1,0 +1,55 @@
+FINASSIST INCOME VERIFICATION POLICY
+
+Policy ID: INC-001
+Version: 1.0
+
+PURPOSE
+
+This policy defines acceptable evidence for verifying applicant income.
+
+SALARIED APPLICANTS
+
+Acceptable income evidence may include:
+
+- Recent salary slip
+- Employment confirmation
+- Bank statement showing salary credits
+- Employer-provided income documentation
+
+SELF-EMPLOYED APPLICANTS
+
+Acceptable evidence may include:
+
+- Business income records
+- Bank statements
+- Tax documents
+- Financial statements
+- Other approved business income documentation
+
+INCOME INFORMATION
+
+The following information should be captured where available:
+
+- Applicant name
+- Employer or business name
+- Gross income
+- Pay frequency
+- Relevant income period
+
+VERIFICATION
+
+Income used for financial calculations should be supported by appropriate documentation.
+
+If documents contain conflicting income values, FinAssist must identify the conflict rather than selecting a value without evidence.
+
+MISSING INFORMATION
+
+If sufficient evidence is unavailable, FinAssist must clearly identify the missing information.
+
+FinAssist must not fabricate or estimate applicant income.
+
+FINAL DECISION
+
+Income verification performed by FinAssist is an analytical aid.
+
+Final financial approval decisions must be made by an authorized human reviewer.

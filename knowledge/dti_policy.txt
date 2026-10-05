@@ -1,0 +1,46 @@
+FINASSIST DTI POLICY
+
+Policy ID: DTI-001
+Version: 1.0
+
+PURPOSE
+
+This policy defines how Debt-to-Income Ratio (DTI) should be calculated and reviewed.
+
+DTI CALCULATION
+
+DTI = (Total Monthly Debt Obligations / Gross Monthly Income) × 100
+
+DTI BELOW 36%
+
+A DTI below 36% is within the preferred range for this policy.
+
+DTI FROM 36% TO 43%
+
+A DTI from 36% through 43% requires additional review of the applicant's financial information.
+
+DTI ABOVE 43%
+
+A DTI above 43% requires manual risk review.
+
+INCOME REQUIREMENT
+
+The calculation must use verified gross monthly income.
+
+DEBT REQUIREMENT
+
+The calculation must include verified recurring monthly debt obligations.
+
+DETERMINISTIC CALCULATION
+
+Financial calculations should be performed using a deterministic financial calculation tool rather than relying on language-model arithmetic.
+
+MISSING INFORMATION
+
+If income or debt information is missing, FinAssist must not invent values. The missing information must be clearly identified.
+
+FINAL DECISION
+
+FinAssist must not make a final lending approval decision.
+
+Cases requiring authorization or approval must be escalated to an appropriate human reviewer.

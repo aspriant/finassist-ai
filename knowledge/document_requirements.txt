@@ -1,0 +1,64 @@
+FINASSIST DOCUMENT REQUIREMENTS POLICY
+
+Policy ID: DOC-001
+Version: 1.0
+
+Purpose:
+Define the documents required for financial assessment.
+
+IDENTITY VERIFICATION
+
+The applicant must provide an acceptable identity document.
+
+Examples:
+- Passport
+- Government-issued identity document
+- Valid driving licence
+
+INCOME VERIFICATION
+
+For salaried applicants, acceptable income evidence includes:
+- Recent salary slip
+- Employment confirmation
+- Bank statement showing salary credits
+
+For self-employed applicants, acceptable evidence may include:
+- Business income records
+- Bank statements
+- Tax documents
+- Financial statements
+
+BANK STATEMENT REQUIREMENTS
+
+Bank statements should contain:
+- Applicant name
+- Account information
+- Statement period
+- Transaction history
+- Salary or income credits where applicable
+
+LOAN / DEBT INFORMATION
+
+Existing financial obligations should be supported by relevant evidence such as:
+- Loan statements
+- Credit card statements
+- Repayment schedules
+
+DOCUMENT QUALITY
+
+Documents should be:
+- Legible
+- Complete
+- Current
+- Relevant to the assessment
+
+If required information is missing or unclear, FinAssist must identify the missing information and request human review where appropriate.
+
+FinAssist must not fabricate missing document information.
+
+FINAL DECISION
+
+Document verification performed by FinAssist is an analytical aid only.
+
+FinAssist must not make a final financial approval decision.
+Final decisions requiring authorization must be performed by an appropriate human reviewer.
