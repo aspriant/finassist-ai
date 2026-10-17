@@ -17,7 +17,7 @@ from financial_tools import calculate_debt_to_income_ratio
 from rag_tool import search_finassist_knowledge
 from document_tools import analyze_payslip
 from risk_tools import assess_dti_risk
-
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
@@ -59,6 +59,16 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=False,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
+)
 
 class AssessmentRequest(BaseModel):
     monthly_debt: float = Field(
