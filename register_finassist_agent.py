@@ -14,6 +14,7 @@ from openai.types.responses.response_input_param import (
     FunctionCallOutput,
     ResponseInputParam,
 )
+from risk_tools import assess_dti_risk
 
 
 load_dotenv()
@@ -121,6 +122,31 @@ payslip_tool = FunctionTool(
     strict=True,
 )
 
+# ---------------------------------------------------------
+# Define deterministic risk assessment tool
+# ---------------------------------------------------------
+
+risk_tool = FunctionTool(
+    name="assess_dti_risk",
+    description=(
+        "Classify a calculated DTI using FinAssist policy DTI-001. "
+        "Use this after the DTI calculation is available. "
+        "Returns the applicable category and review requirement. "
+        "Does not make a final lending decision."
+    ),
+    parameters={
+        "type": "object",
+        "properties": {
+            "dti_ratio": {
+                "type": "number",
+                "description": "Calculated DTI percentage, such as 27.59.",
+            },
+        },
+        "required": ["dti_ratio"],
+        "additionalProperties": False,
+    },
+    strict=True,
+)
 
 # ---------------------------------------------------------
 # 4. Register both tools
@@ -130,6 +156,7 @@ tools: list[Tool] = [
     dti_tool,
     rag_tool,
     payslip_tool,
+    risk_tool,
 ]
 
 
@@ -180,6 +207,15 @@ TOOL RULES
 
 12. Protect sensitive financial information.
 
+13. Use assess_dti_risk after receiving a valid DTI calculation
+    when a risk classification is requested.
+
+14. Pass the exact dti_ratio returned by the deterministic DTI tool
+    to assess_dti_risk. Do not recalculate or invent the value.
+
+15. Explain the risk category and review requirement returned
+    by the risk tool. Do not make a final lending decision.
+
 RESPONSE RULES
 
 When presenting a financial calculation:
@@ -222,7 +258,9 @@ question = (
     "Analyze my payslip. "
     "Use the gross monthly income extracted from the payslip "
     "and calculate my DTI using monthly debt obligations of 40000. "
-    "Then tell me what the FinAssist policy says about my DTI."
+    "Retrieve the relevant FinAssist policy evidence, "
+    "classify the DTI using the risk tool, and provide a consolidated "
+    "report with assumptions and human-review requirements."
 )
 
 print("\nUSER QUESTION")
@@ -323,6 +361,25 @@ while True:
                 f"Gross monthly income: "
                 f"{result['gross_monthly_income']}"
             )
+
+            input_list.append(
+                FunctionCallOutput(
+                    type="function_call_output",
+                    call_id=item.call_id,
+                    output=json.dumps(result),
+                )
+            )
+        # -------------------------------------------------
+        # Risk assessment tool
+        # -------------------------------------------------
+
+        elif item.name == "assess_dti_risk":
+
+            result = assess_dti_risk(
+                dti_ratio=arguments["dti_ratio"]
+            )
+
+            print(f"Risk assessment result: {result}")
 
             input_list.append(
                 FunctionCallOutput(
